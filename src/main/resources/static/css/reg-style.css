@@ -1,0 +1,177 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: url("../images/background.jpg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.banner img{
+    width: 13rem;
+}
+
+/* LOGIN */
+
+.reg{
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    border: solid mediumorchid 3px;
+    border-radius: 10px;
+    width: 35rem;
+    height: 22rem;
+    color: white;
+}
+
+.reg h1{
+    margin-bottom: 0;
+}
+
+.form{
+    display: inherit;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form label,input{
+    width: 14rem;
+    color: aquamarine;
+}
+
+.form label{
+    margin-top: 2rem;
+}
+
+.form input{
+    height: 1rem;
+    margin-top: 0.5rem;
+
+    background: none;
+    border: none;
+    outline: 0px;
+    border-bottom: 0.2em solid aquamarine;
+    color: white;
+    font-family: inherit;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form input:hover{
+    border-bottom: 0.2em solid white;
+}
+
+.form input:focus{
+    border-bottom: 0.2em solid white;
+    color: white;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.form div{
+    width: 14rem;
+}
+
+.form button{
+    width: 6rem;
+    height: 1.5rem;
+    font-family: inherit;
+    font-weight: 700;
+    background-color: aquamarine;
+    color: black;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.form button:hover{
+    background-color:mediumorchid;
+    color: white;
+}
+
+.error{
+    margin-top: .3rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.7rem;
+    width: 14rem;
+    height: 1rem;
+    color: red;
+}
+
+.reg a{
+    text-decoration: none;
+    margin-top: 1.5rem;
+    color: steelblue;
+    font-size: 0.7rem;
+}
+
+.reg a:hover{
+    color: mediumorchid;
+}
+
+footer{
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+
+@media only screen 
+and (max-device-width: 800px){
+
+    .banner img{width: 10rem;}
+
+    .reg{
+        margin-top: 5vh;
+        width: 75vw;
+        height: 28rem;
+    }
+
+    .reg h1{
+        margin-top: .7rem;
+        font-size: 1.7rem;
+    }
+
+    .form label,input{
+        width: 11rem;
+        color: aquamarine;
+    }
+
+    .form label{margin-top: .5rem;}
+    
+    #label_email,#label_pass1{margin-top: 1.2rem;}
+    #label_name{margin-top: 1rem;}
+
+    .error{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+/* Form order */
+    #label_name{order: 1;}
+    #name{order: 2;}
+    #label_email{order: 3;}
+    #email{order: 4;}
+    #label_pass1{order: 5;}
+    #pass1{order: 6;}
+    #error1{order: 7}
+    #label_pass2{order: 8;}
+    #pass2{order: 9;}
+    #error2{order: 10}
+
+    #btn{
+        order: 11;
+        margin-top: 1rem;
+    }
+}

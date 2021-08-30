@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/reg-style.css"></link>
+    <title>REGISTER</title>
+</head>
+<body>
+    <div class="banner">
+        <img src="./images/disney.png">
+    </div>
+    <div class="reg">
+        <h1>REGISTER</h1>
+        <form id="form" class="form register">
+            <label for="name" id="label_name">Name</label>
+            <label for="email" id="label_email">Email</label>
+            <input type="text" required autocomplete="off" id="name">
+            <input type="text" required autocomplete="off" id="email">
+
+            <label for="pass" id="label_pass1">Password</label>
+            <label for="rpt_pass" id="label_pass2">Repeat Password</label>
+            <input type="password" required autocomplete="off" id="pass1" placeholder="">
+            <input type="password" required autocomplete="off" id="pass2" placeholder="">
+            <p class="error" id="error1"></p>
+            <p class="error" id="error2"></p>
+            <div id="btn">
+                <button id="btnSubmit">REGISTER</button>  
+            </div>  
+        </form>
+        <a href="login.html">Already have an account? LOGIN</a>
+    </div>
+    <footer>@ALKEMY challenge</footer>
+
+    <script src="js/register.js"></script>
+</body>
+</html>
