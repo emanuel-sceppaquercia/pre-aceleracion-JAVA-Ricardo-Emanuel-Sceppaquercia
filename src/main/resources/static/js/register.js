@@ -39,4 +39,7 @@ async function registerUser(){
         body: JSON.stringify(data)
     });
 
+    alert("Succesfull");
+    window.location.href = 'login.html';
+
 }
