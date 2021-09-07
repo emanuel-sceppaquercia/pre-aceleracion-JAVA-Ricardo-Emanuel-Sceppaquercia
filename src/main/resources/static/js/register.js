@@ -20,7 +20,7 @@ async function registerUser(){
     data.email = document.getElementById('email').value;
     data.password = document.getElementById('pass1').value;
 
-    let pass = document.getElementById('pass2').value == data.password;
+    let pass = document.getElementById('pass2').value == data.password && data.password != "";
 
     // Confirms that the password match and then, make the request. If not, returns and inform the user
     if(pass == false){
