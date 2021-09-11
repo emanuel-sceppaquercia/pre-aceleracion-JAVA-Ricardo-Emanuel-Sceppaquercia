@@ -16,14 +16,9 @@ import java.util.List;
 import com.example.challenge.models.Character;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 @Service
 public class CharacterServiceImpl implements CharacterService {
-
-    @PersistenceContext
-    EntityManager entityManager;
 
     @Autowired
     MovieRepository movieRepository;
@@ -101,7 +96,7 @@ public class CharacterServiceImpl implements CharacterService {
         Long movieId = (long) characterDto.getMovieId();
         newChar.setMovie(movieRepository.findById(movieId).get());
 
-        entityManager.merge(newChar);
+        characterRepository.save(newChar);
     }
 
     @Override
@@ -123,16 +118,11 @@ public class CharacterServiceImpl implements CharacterService {
 
     @Override
     public CharMovieListDto getCharacter(int id){
-        // Trae el registro correspondiente con el id
         Character newChar = characterRepository.findById((long)id).get();
 
-        // Crea un registro con todos los datos excepto la lista de movies a partir del registro original
         CharMovieListDto charMovieListDto = new CharacterBuilder().withCharacter(newChar).buildCharMovieListDto();
 
-        // Crea una copia del atributo movies del registro original
         List<Movie> list = newChar.getMovies();
-        // Por cada movie en la lista genera un nuevo movieGetDto, heredando los valores de atributos
-        // y posteriormente lo añade a la lista del objeto "charMovieListDto".
         for (Movie movie: list){
             MovieGetDto movieGetDto = new MovieBuilder().withMovie(movie).buildMovieGetDto();
             charMovieListDto.setMovie(movieGetDto);
