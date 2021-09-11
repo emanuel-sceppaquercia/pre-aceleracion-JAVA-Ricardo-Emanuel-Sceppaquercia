@@ -1,7 +1,6 @@
 package com.example.challenge.service;
 
 import com.example.challenge.dto.*;
-import com.example.challenge.models.Movie;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.challenge.serviceImp;
+package com.example.challenge.serviceImpl;
 
 import com.example.challenge.dto.*;
 import com.example.challenge.model.builder.CharacterBuilder;
@@ -17,7 +17,7 @@ import java.util.Comparator;
 import java.util.List;
 
 @Service
-public class MovieServiceImp implements MovieService {
+public class MovieServiceImpl implements MovieService {
 
     @Autowired
     MovieRepository movieRepository;

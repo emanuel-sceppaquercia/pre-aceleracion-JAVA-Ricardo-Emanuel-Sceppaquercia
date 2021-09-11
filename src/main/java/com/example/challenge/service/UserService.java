@@ -8,7 +8,4 @@ public interface UserService {
 
     void registerUser(User user);
 
-    boolean verifyUser(User user);
-
-    List<User> getAll();
 }

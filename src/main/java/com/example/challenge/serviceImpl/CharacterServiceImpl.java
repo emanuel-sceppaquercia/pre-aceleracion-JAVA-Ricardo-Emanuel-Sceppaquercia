@@ -1,10 +1,9 @@
-package com.example.challenge.serviceImp;
+package com.example.challenge.serviceImpl;
 
 
 import com.example.challenge.dto.*;
 import com.example.challenge.model.builder.CharacterBuilder;
 import com.example.challenge.model.builder.MovieBuilder;
-import com.example.challenge.models.Genre;
 import com.example.challenge.models.Movie;
 import com.example.challenge.repository.CharacterRepository;
 import com.example.challenge.repository.MovieRepository;
@@ -21,7 +20,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Service
-public class CharacterServiceImp implements CharacterService {
+public class CharacterServiceImpl implements CharacterService {
 
     @PersistenceContext
     EntityManager entityManager;
