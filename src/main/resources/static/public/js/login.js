@@ -20,7 +20,7 @@ async function signIn(){
     data.password = document.getElementById('pass').value;
 
     // Make the request and sends the data through  POST
-    const request = await fetch('auth/login', {
+    const request = await fetch('http://localhost:8080/auth/login', {
         method: 'POST',
         headers: {
             'Accept': '*/*',
