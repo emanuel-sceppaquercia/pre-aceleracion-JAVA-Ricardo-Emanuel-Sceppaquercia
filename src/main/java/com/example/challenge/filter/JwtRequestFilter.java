@@ -30,10 +30,13 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
 
-        // Retrieves from the header the "Authorization" field. If the field doesn't exist, it will return an error.
         String authorizationHeader = request.getHeader("Authorization");
-        boolean contain = authorizationHeader.startsWith("Bearer ");
-        if(contain){
+        if(authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")){
+            filterChain.doFilter(request,response);
+            return;
+        }
+
+        if(authorizationHeader.startsWith("Bearer ")){
             String jwt = authorizationHeader.replace("Bearer", "");
             String username = jwtUtil.extractUsername(jwt);
 

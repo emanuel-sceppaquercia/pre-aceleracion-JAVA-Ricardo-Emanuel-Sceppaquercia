@@ -16,21 +16,23 @@ async function signIn(){
 
     // Prepare the object to be send later as json
     let data = {}
-    data.email = document.getElementById('email').value;
+    data.username = document.getElementById('email').value;
     data.password = document.getElementById('pass').value;
 
     // Make the request and sends the data through  POST
     const request = await fetch('auth/login', {
         method: 'POST',
         headers: {
-            'Accept': 'application/json',
+            'Accept': '*/*',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
     });
-    const response = await request.json();
+    const response = await request;
 
-    if(response == 'OK'){
+    console.log(response);
+
+    if(response.ok){
         window.location.href = 'index.html';
     } else {
         alert('Wrong credentials.')
