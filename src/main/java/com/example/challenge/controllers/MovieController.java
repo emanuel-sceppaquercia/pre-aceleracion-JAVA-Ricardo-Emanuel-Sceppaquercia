@@ -40,7 +40,7 @@ public class MovieController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<?> deleteCharacter(@PathVariable int id){
+    public ResponseEntity<?> deleteMovie(@PathVariable int id){
         if(movieService.exist(id)){
             movieService.deleteMovie(id);
             return new ResponseEntity<>(HttpStatus.OK);
@@ -49,7 +49,7 @@ public class MovieController {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<?> updateCharacter(@PathVariable int id,@RequestBody MovieDto movieDto){
+    public ResponseEntity<?> updateMovie(@PathVariable int id,@RequestBody MovieDto movieDto){
         if(movieService.exist(id)){
             movieService.updateMovie(id, movieDto);
             return new ResponseEntity<>(HttpStatus.OK);
